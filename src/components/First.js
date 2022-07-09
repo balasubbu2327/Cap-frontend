@@ -11,6 +11,9 @@ const First = () => {
             This Inventory tool was made completely with Material UI.
             This is helpful for making the products in your home to arrange like a collection.
         </Typography>
+        <Typography variant='h4'sx={{color:'red', textAlign: 'center'}}>
+            This is cteated by BalaSubramanian
+        </Typography>
 
     </div>
   )
