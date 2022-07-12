@@ -12,7 +12,7 @@ const UserProducts = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .get(`http://localhost:5000/api/product/user/${id}`)
+      .get(`https://inventory27.herokuapp.com/api/product/user/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

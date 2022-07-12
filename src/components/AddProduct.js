@@ -27,7 +27,7 @@ const AddProduct = () => {
   };
 
   const sendRequest = async () => {
-    const res = await axios.post("http://localhost:5000/api/product/add", {
+    const res = await axios.post("https://inventory27.herokuapp.com/api/product/add", {
         item: inputs.item,
         cost: inputs.cost,
         quantity: inputs.quantity,

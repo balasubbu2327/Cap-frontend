@@ -8,7 +8,7 @@ const Products = () => {
   
   const [products, setProducts] = useState();
   const sendRequest = async () => {
-    const res = await axios.get("http://localhost:5000/api/product").catch(err=>console.log(err));
+    const res = await axios.get("https://inventory27.herokuapp.com/api/product").catch(err=>console.log(err));
     const data = await res.data;
     return data;
   }

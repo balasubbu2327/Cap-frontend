@@ -25,7 +25,7 @@ const ProductDetail = () => {
 
   const sendRequest = async () => {
     const res = await axios
-      .put(`http://localhost:5000/api/product/update/${id}`, {
+      .put(`https://inventory27.herokuapp.com/api/product/update/${id}`, {
         item: inputs.item,
         cost: inputs.cost,
         quantity: inputs.quantity,
@@ -54,7 +54,7 @@ const ProductDetail = () => {
   console.log(id);
 
   const fetchDetails = async () => {
-    const res = await axios.get(`http://localhost:5000/api/product/${id}`)
+    const res = await axios.get(`https://inventory27.herokuapp.com/api/product/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

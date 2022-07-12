@@ -18,7 +18,7 @@ const Product = ({item,cost,quantity,date,use,image,user,isUser,id}) => {
 
   const deleteRequest = async () => {
     const res = await axios
-      .delete(`http://localhost:5000/api/product/${id}`)
+      .delete(`https://inventory27.herokuapp.com/api/product/${id}`)
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
