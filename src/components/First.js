@@ -12,7 +12,7 @@ const First = () => {
             This is helpful for making the products in your home to arrange like a collection.
         </Typography>
         <Typography variant='h4'sx={{color:'red', textAlign: 'center'}}>
-            This is cteated by BalaSubramanian
+            This is created by BalaSubramanian
         </Typography>
 
     </div>
