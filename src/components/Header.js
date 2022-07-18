@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {AppBar,Box,Button,Tab,Tabs,Toolbar} from "@mui/material";
+import {AppBar,Box,Button,Tab,Tabs,Toolbar, Typography} from "@mui/material";
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -7,18 +7,26 @@ import { authActions } from '../store';
 
 
 var styles = {
-  default:{
+  title:{
     color: 'red',
     fontWeight: 'bolder',
     fontSize: '32px',
-  }}
+  },
+  name:{
+    color: 'red',
+  }
+}
 
-const Header = () => {
+const Header = ({userDetails}) => {
   const isLoggedIn = useSelector(state=> state.isLoggedIn);
   const dispath = useDispatch();
 
+ const [value,setvalue] = useState();
 
-  const [value, setvalue] = useState()
+  
+  
+
+
   return (
     <AppBar 
     position='sticky'
@@ -27,7 +35,7 @@ const Header = () => {
     }}>
         <Toolbar>
         
-        <Tab style={styles.default} LinkComponent={Link} to="/" label="Management Tool"/>
+        <Tab style={styles.title} LinkComponent={Link} to="/" label="Management Tool"/>
         {/* <Typography variant="h4">Management Tool</Typography> */}
 
 
@@ -44,7 +52,11 @@ const Header = () => {
                 <Button LinkComponent={Link} to="/auth" variant='contained' sx={{margin:1,borderRadius:10}} color="warning">SignUp</Button>
        </>}   
               
-       {  isLoggedIn &&  ( <Button onClick={()=>dispath(authActions.logout())} LinkComponent={Link} to="/auth" variant='contained' sx={{margin:1,borderRadius:10}} color="warning">LOGOUT</Button>) }
+       {  isLoggedIn && <>
+       <Typography style={styles.name} variant='h3' >{userDetails.name? userDetails.name :localStorage.getItem('userName')}</Typography>
+        <Button onClick={()=>dispath(authActions.logout())} LinkComponent={Link} to="/auth" variant='contained' sx={{margin:1,borderRadius:10}} color="warning">LOGOUT</Button>
+       </>
+       }
             </Box>
         </Toolbar>
     </AppBar>
